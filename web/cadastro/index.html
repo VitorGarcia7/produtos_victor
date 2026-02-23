@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Produto | Nexus Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <a href="../index.html" class="logo-container">
+            <div class="logo-icon">N</div>
+            <span>Nexus Store</span>
+        </a>
+        <nav>
+            <a href="../produtos/index.html">Produtos</a>
+            <a href="index.html" style="color: var(--primary-color);">Cadastrar</a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">🌙</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Cadastrar Novo Produto</h1>
+            <p>Preencha os dados abaixo para adicionar um item ao catálogo.</p>
+        </div>
+
+        <div class="form-container">
+            <form id="cadastro-form">
+                <div class="form-group">
+                    <label for="nome">Nome do Produto</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Ex: Smartphone Nexus">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="preco">Preço (R$)</label>
+                        <input type="number" id="preco" name="preco" step="0.01" min="0" required
+                            placeholder="Ex: 1999.99">
+                    </div>
+
+                    <div class="form-group half">
+                        <label for="categoria">Categoria</label>
+                        <input type="text" id="categoria" name="categoria" required placeholder="Ex: Eletrônicos">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" name="descricao" rows="4" required
+                        placeholder="Detalhes do produto..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-submit" id="submit-btn">Adicionar Produto</button>
+            </form>
+
+            <div id="feedback-message" class="feedback-message hidden">
+                <!-- Mensagem de sucesso ou erro -->
+            </div>
+        </div>
+    </main>
+
+    <script src="../theme.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

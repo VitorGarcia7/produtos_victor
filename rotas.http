@@ -1,0 +1,17 @@
+GET http://localhost:3333/produtos
+
+###
+
+POST http://localhost:3333/produtos
+Content-Type: application/json
+
+{
+    "nome": "Victor",
+    "preco": 9999,
+    "categoria": "Lindo",
+    "descricao": "NÃO É SOLTEIRO! AMO MINHA MULHER"
+}
+
+###
+
+DELETE http://localhost:3333/produtos/6
