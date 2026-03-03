@@ -16,6 +16,12 @@ const pool = mysql.createPool({
     queueLimit: 0
 })
 
+app.get('/', (req, res) => {
+  res.json({
+    message: "Olá, mundo. O servidor está funcionando normalmente!"
+  })
+})
+
 app.post('/produtos', async (req, res) => {
     const { nome, preco, categoria, descricao } = req.body
 

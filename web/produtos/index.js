@@ -30,23 +30,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function deleteProduct(id) {
+    window.deleteProduct = function (id) {
         fetch(`http://localhost:3333/produtos/${id}`, {
             method: 'DELETE'
         })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Falha na resposta do servidor');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-        })
-        .catch(error => {
-            console.error('Erro ao excluir produto:', error);
-        })
-    }
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Falha na resposta do servidor');
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert("Produto deletado com sucesso!");
+                fetchProducts(); // atualiza a lista após deletar
+            })
+            .catch(error => {
+                console.error('Erro ao excluir produto:', error);
+                alert('Erro ao deletar produto');
+            });
+    };
+
 
     function renderProducts(products) {
         gridEl.innerHTML = ''; // Limpa o grid
@@ -79,6 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
             gridEl.appendChild(card);
         });
     }
+
+
 
     function hideElement(el) {
         if (el) el.classList.add('hidden');
